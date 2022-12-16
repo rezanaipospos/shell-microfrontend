@@ -1,0 +1,76 @@
+[submodule "projects/hris-company-structure"]
+	path = projects/hris-company-structure
+	url = http://192.168.223.213/humanresource/ui/company-structure.git
+	branch = development
+[submodule "projects/hris-settings"]
+	path = projects/hris-settings
+	url = http://192.168.223.213/humanresource/ui/settings.git
+	branch = development
+[submodule "projects/hris-employee"]
+	path = projects/hris-employee
+	url = http://192.168.223.213/humanresource/ui/employee.git
+	branch = development
+[submodule "projects/s4-superapps"]
+	path = projects/s4-superapps
+	url = http://192.168.223.213/jefri/s4-super-apps.git
+	branch = development
+[submodule "projects/hris-attendance"]
+	path = projects/hris-attendance
+	url = http://192.168.223.213/humanresource/ui/attendance
+	branch = development
+[submodule "projects/hris-driver"]
+	path = projects/hris-driver
+	url = http://192.168.223.213/humanresource/ui/driver
+	branch = development
+[submodule "projects/authentication"]
+	path = projects/authentication
+	url = http://192.168.223.213/authentication/ui/auth
+	branch = development
+[submodule "projects/auth-lib"]
+	path = projects/auth-lib
+	url = http://192.168.223.213/authentication/ui/auth-lib
+	branch = development
+[submodule "projects/sso"]
+	path = projects/sso
+	url = http://192.168.223.213/authentication/ui/sso
+	branch = development
+[submodule "projects/hris-dashboard"]
+	path = projects/hris-dashboard
+	url = http://192.168.223.213/humanresource/ui/dashboard
+	branch = development
+[submodule "projects/hris-request"]
+	path = projects/hris-request
+	url = http://192.168.223.213/humanresource/ui/request
+	branch = development
+[submodule "projects/hris-profile"]
+	path = projects/hris-profile
+	url = http://192.168.223.213/humanresource/ui/profile
+	branch = development
+[submodule "projects/hris-subordinate-data"]
+	path = projects/hris-subordinate-data
+	url = http://192.168.223.213/humanresource/ui/subordinate-data
+	branch = development
+[submodule "projects/leave-balance-lib"]
+	path = projects/leave-balance-lib
+	url = http://192.168.223.213/humanresource/ui/leave-balance-lib
+	branch = development
+[submodule "projects/hris-hrd-request"]
+	path = projects/hris-hrd-request
+	url = http://192.168.223.213/humanresource/ui/hrd-request
+	branch = development
+[submodule "projects/hris-questionnaire"]
+	path = projects/hris-questionnaire
+	url = http://192.168.223.213/humanresource/ui/questionnaire
+	branch = development
+[submodule "projects/hris-recruitment"]
+	path = projects/hris-recruitment
+	url = http://192.168.223.213/humanresource/ui/recruitment
+	branch = development
+[submodule "projects/hris-training-master"]
+	path = projects/hris-training-master
+	url = http://192.168.223.213/humanresource/ui/training-master
+	branch = development
+[submodule "projects/hris-training"]
+	path = projects/hris-training
+	url = http://192.168.223.213/humanresource/ui/training
+	branch = development

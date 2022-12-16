@@ -1,0 +1,21 @@
+FROM node:latest as builder
+
+# COPY package.json  ./
+
+# RUN yarn install
+
+RUN mkdir /s4-superapps
+
+# RUN mv ./node_modules ./s4-superapps
+
+WORKDIR /s4-superapps
+
+COPY . .
+
+RUN npm run ng build --configuration=production --project=s4-superapps
+
+FROM nginx
+COPY nginx/default.conf /etc/nginx/conf.d/default.conf
+COPY --from=builder /s4-superapps/dist/s4-superapps /usr/share/nginx/html
+
+CMD ["nginx", "-g", "daemon off;"]

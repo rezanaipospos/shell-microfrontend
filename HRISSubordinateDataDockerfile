@@ -1,0 +1,25 @@
+FROM node:alpine as builder
+
+COPY package.json  ./
+
+#RUN yarn install 
+
+RUN mkdir /hris-subordinate-data
+
+#COPY node_modules  ./hris-settings
+
+#RUN mv ./node_modules ./hris-company-structure
+
+WORKDIR /hris-subordinate-data
+
+COPY . .
+
+#RUN npm run ng test hris-company-structure
+
+RUN npm run ng build --configuration=production --base-href=hris/subordinate-data  hris-subordinate-data
+
+FROM nginx:stable-alpine
+COPY nginx/hris-subordinate-data.conf /etc/nginx/conf.d/default.conf
+#COPY --from=builder /hris-company-structure/dist/hris-company-structure /usr/share/nginx/html
+COPY --from=builder /hris-subordinate-data/dist/hris-subordinate-data /usr/share/nginx/html/subordinate-data
+CMD ["nginx", "-g", "daemon off;"]

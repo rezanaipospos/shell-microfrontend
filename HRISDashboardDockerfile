@@ -1,0 +1,25 @@
+FROM node:alpine as builder
+
+# COPY package.json  ./
+
+#RUN yarn install 
+
+RUN mkdir /hris-dashboard
+
+#COPY node_modules  ./hris-settings
+
+#RUN mv ./node_modules ./hris-company-structure
+
+WORKDIR /hris-dashboard
+
+COPY . .
+
+#RUN npm run ng test hris-company-structure
+
+RUN npm run ng build --configuration=production --base-href=hris/dashboard  hris-dashboard
+
+FROM nginx:stable-alpine
+COPY nginx/hris-dashboard.conf /etc/nginx/conf.d/default.conf
+#COPY --from=builder /hris-company-structure/dist/hris-company-structure /usr/share/nginx/html
+COPY --from=builder /hris-dashboard/dist/hris-dashboard /usr/share/nginx/html/dashboard
+CMD ["nginx", "-g", "daemon off;"]

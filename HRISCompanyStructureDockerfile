@@ -1,0 +1,21 @@
+FROM node:latest as builder
+
+#COPY package.json  ./
+
+RUN mkdir /hris-company-structure 
+
+##COPY node_modules  ./hris-company-structure 
+
+WORKDIR /hris-company-structure 
+
+COPY . .
+
+RUN npm run ng build --configuration=production --base-href=hris/company-structure  hris-company-structure 
+
+FROM nginx:stable-alpine
+
+COPY nginx/hris-company-structure.conf /etc/nginx/conf.d/default.conf
+
+COPY --from=builder /hris-company-structure/dist/hris-company-structure /usr/share/nginx/html/company-structure
+
+CMD ["nginx", "-g", "daemon off;"]

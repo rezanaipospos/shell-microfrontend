@@ -1,0 +1,2147 @@
+{
+	"$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+	"version": 1,
+	"newProjectRoot": "projects",
+	"projects": {
+		"hris-settings": {
+			"projectType": "application",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss"
+				},
+				"@schematics/angular:application": {
+					"strict": true
+				}
+			},
+			"root": "projects/hris-settings",
+			"sourceRoot": "projects/hris-settings/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "ngx-build-plus:browser",
+					"options": {
+						"outputPath": "dist/hris-settings",
+						"index": "projects/hris-settings/src/index.html",
+						"main": "projects/hris-settings/src/main.ts",
+						"polyfills": "projects/hris-settings/src/polyfills.ts",
+						"tsConfig": "projects/hris-settings/tsconfig.app.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/hris-settings/src/favicon.ico",
+							"projects/hris-settings/src/assets"
+						],
+						"styles": [
+							"projects/hris-settings/src/styles.scss"
+						],
+						"scripts": [],
+						"extraWebpackConfig": "projects/hris-settings/webpack.config.js",
+						"commonChunk": false
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "1mb",
+									"maximumError": "1mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "1mb",
+									"maximumError": "1mb"
+								}
+							],
+							"fileReplacements": [
+								{
+									"replace": "projects/hris-settings/src/environments/environment.ts",
+									"with": "projects/hris-settings/src/environments/environment.prod.ts"
+								}
+							],
+							"aot": true,
+							"optimization": true,
+							"outputHashing": "all",
+							"sourceMap": false,
+							"namedChunks": false,
+							"extractLicenses": true,
+							"vendorChunk": true,
+							"buildOptimizer": true,
+							"extraWebpackConfig": "projects/hris-settings/webpack.prod.config.js"
+						},
+						"development": {
+							"buildOptimizer": false,
+							"optimization": false,
+							"vendorChunk": true,
+							"extractLicenses": false,
+							"sourceMap": true,
+							"namedChunks": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"builder": "ngx-build-plus:dev-server",
+					"configurations": {
+						"production": {
+							"browserTarget": "hris-settings:build:production",
+							"extraWebpackConfig": "projects/hris-settings/webpack.prod.config.js"
+						},
+						"development": {
+							"browserTarget": "hris-settings:build:development"
+						}
+					},
+					"defaultConfiguration": "development",
+					"options": {
+						"port": 4202,
+						"publicHost": "http://localhost:4202",
+						"extraWebpackConfig": "projects/hris-settings/webpack.config.js"
+					}
+				},
+				"extract-i18n": {
+					"builder": "ngx-build-plus:extract-i18n",
+					"options": {
+						"browserTarget": "hris-settings:build",
+						"extraWebpackConfig": "projects/hris-settings/webpack.config.js"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"main": "projects/hris-settings/src/test.ts",
+						"polyfills": "projects/hris-settings/src/polyfills.ts",
+						"tsConfig": "projects/hris-settings/tsconfig.spec.json",
+						"karmaConfig": "projects/hris-settings/karma.conf.js",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/hris-settings/src/favicon.ico",
+							"projects/hris-settings/src/assets"
+						],
+						"styles": [
+							"projects/hris-settings/src/styles.scss"
+						],
+						"scripts": []
+					}
+				}
+			}
+		},
+		"hris-company-structure": {
+			"projectType": "application",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss"
+				},
+				"@schematics/angular:application": {
+					"strict": true
+				}
+			},
+			"root": "projects/hris-company-structure",
+			"sourceRoot": "projects/hris-company-structure/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "ngx-build-plus:browser",
+					"options": {
+						"outputPath": "dist/hris-company-structure",
+						"index": "projects/hris-company-structure/src/index.html",
+						"main": "projects/hris-company-structure/src/main.ts",
+						"polyfills": "projects/hris-company-structure/src/polyfills.ts",
+						"tsConfig": "projects/hris-company-structure/tsconfig.app.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/hris-company-structure/src/favicon.ico",
+							"projects/hris-company-structure/src/assets"
+						],
+						"styles": [
+							"projects/hris-company-structure/src/styles.scss"
+						],
+						"scripts": [],
+						"extraWebpackConfig": "projects/hris-company-structure/webpack.config.js",
+						"commonChunk": false
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "500kb",
+									"maximumError": "1mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "1mb",
+									"maximumError": "1mb"
+								}
+							],
+							"fileReplacements": [
+								{
+									"replace": "projects/hris-company-structure/src/environments/environment.ts",
+									"with": "projects/hris-company-structure/src/environments/environment.prod.ts"
+								}
+							],
+							"aot": true,
+							"optimization": true,
+							"outputHashing": "all",
+							"sourceMap": false,
+							"namedChunks": false,
+							"extractLicenses": true,
+							"vendorChunk": true,
+							"buildOptimizer": true,
+							"extraWebpackConfig": "projects/hris-company-structure/webpack.prod.config.js"
+						},
+						"development": {
+							"buildOptimizer": false,
+							"optimization": false,
+							"vendorChunk": true,
+							"extractLicenses": false,
+							"sourceMap": true,
+							"namedChunks": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"builder": "ngx-build-plus:dev-server",
+					"configurations": {
+						"production": {
+							"browserTarget": "hris-company-structure:build:production",
+							"extraWebpackConfig": "projects/hris-company-structure/webpack.prod.config.js"
+						},
+						"development": {
+							"browserTarget": "hris-company-structure:build:development"
+						}
+					},
+					"defaultConfiguration": "development",
+					"options": {
+						"port": 4201,
+						"publicHost": "http://localhost:4201",
+						"extraWebpackConfig": "projects/hris-company-structure/webpack.config.js"
+					}
+				},
+				"extract-i18n": {
+					"builder": "ngx-build-plus:extract-i18n",
+					"options": {
+						"browserTarget": "hris-company-structure:build",
+						"extraWebpackConfig": "projects/hris-company-structure/webpack.config.js"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"main": "projects/hris-company-structure/src/test.ts",
+						"polyfills": "projects/hris-company-structure/src/polyfills.ts",
+						"tsConfig": "projects/hris-company-structure/tsconfig.spec.json",
+						"karmaConfig": "projects/hris-company-structure/karma.conf.js",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/hris-company-structure/src/favicon.ico",
+							"projects/hris-company-structure/src/assets"
+						],
+						"styles": [
+							"projects/hris-company-structure/src/styles.scss"
+						],
+						"scripts": [
+							"node_modules/google-maps-mock/google-maps-mock.js"
+						]
+					}
+				}
+			}
+		},
+		"hris-employee": {
+			"projectType": "application",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss"
+				},
+				"@schematics/angular:application": {
+					"strict": true
+				}
+			},
+			"root": "projects/hris-employee",
+			"sourceRoot": "projects/hris-employee/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "ngx-build-plus:browser",
+					"options": {
+						"outputPath": "dist/hris-employee",
+						"index": "projects/hris-employee/src/index.html",
+						"main": "projects/hris-employee/src/main.ts",
+						"polyfills": "projects/hris-employee/src/polyfills.ts",
+						"tsConfig": "projects/hris-employee/tsconfig.app.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/hris-employee/src/favicon.ico",
+							"projects/hris-employee/src/assets"
+						],
+						"styles": [
+							"projects/hris-employee/src/styles.scss"
+						],
+						"scripts": [],
+						"extraWebpackConfig": "projects/hris-employee/webpack.config.js",
+						"commonChunk": false
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "500kb",
+									"maximumError": "1mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "1mb",
+									"maximumError": "1mb"
+								}
+							],
+							"fileReplacements": [
+								{
+									"replace": "projects/hris-employee/src/environments/environment.ts",
+									"with": "projects/hris-employee/src/environments/environment.prod.ts"
+								}
+							],
+							"aot": true,
+							"optimization": true,
+							"outputHashing": "all",
+							"sourceMap": false,
+							"namedChunks": false,
+							"extractLicenses": true,
+							"vendorChunk": true,
+							"buildOptimizer": true,
+							"extraWebpackConfig": "projects/hris-employee/webpack.prod.config.js"
+						},
+						"development": {
+							"buildOptimizer": false,
+							"optimization": false,
+							"vendorChunk": true,
+							"extractLicenses": false,
+							"sourceMap": true,
+							"namedChunks": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"builder": "ngx-build-plus:dev-server",
+					"configurations": {
+						"production": {
+							"browserTarget": "hris-employee:build:production",
+							"extraWebpackConfig": "projects/hris-employee/webpack.prod.config.js"
+						},
+						"development": {
+							"browserTarget": "hris-employee:build:development"
+						}
+					},
+					"defaultConfiguration": "development",
+					"options": {
+						"port": 4203,
+						"publicHost": "http://localhost:4203",
+						"extraWebpackConfig": "projects/hris-employee/webpack.config.js"
+					}
+				},
+				"extract-i18n": {
+					"builder": "ngx-build-plus:extract-i18n",
+					"options": {
+						"browserTarget": "hris-employee:build",
+						"extraWebpackConfig": "projects/hris-employee/webpack.config.js"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"main": "projects/hris-employee/src/test.ts",
+						"polyfills": "projects/hris-employee/src/polyfills.ts",
+						"tsConfig": "projects/hris-employee/tsconfig.spec.json",
+						"karmaConfig": "projects/hris-employee/karma.conf.js",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/hris-employee/src/favicon.ico",
+							"projects/hris-employee/src/assets"
+						],
+						"styles": [
+							"projects/hris-employee/src/styles.scss"
+						],
+						"scripts": []
+					}
+				}
+			}
+		},
+		"s4-superapps": {
+			"root": "projects/s4-superapps",
+			"sourceRoot": "projects/s4-superapps/src",
+			"projectType": "application",
+			"prefix": "app",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss"
+				},
+				"@schematics/angular:application": {
+					"strict": true
+				}
+			},
+			"architect": {
+				"build": {
+					"builder": "ngx-build-plus:browser",
+					"options": {
+						"allowedCommonJsDependencies": [
+							"hammerjs",
+							"node-waves",
+							"app/main/ui/icons/feather/feather.component",
+							"@angularclass/hmr",
+							"ngx-quill",
+							"lodash",
+							"uuid",
+							"nouislider",
+							"dragula",
+							"apexcharts",
+							"chart.js",
+							"contra/emitter",
+							"crossvent",
+							"highlight.js",
+							"ng2-flatpickr"
+						],
+						"outputPath": "dist/s4-superapps",
+						"index": "projects/s4-superapps/src/index.html",
+						"main": "projects/s4-superapps/src/main.ts",
+						"polyfills": "projects/s4-superapps/src/polyfills.ts",
+						"tsConfig": "projects/s4-superapps/tsconfig.app.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/s4-superapps/src/favicon.ico",
+							"projects/s4-superapps/src/assets"
+						],
+						"styles": [
+							"projects/s4-superapps/src/styles.scss",
+							"node_modules/highlight.js/scss/atom-one-dark.scss",
+							"projects/s4-superapps/src/assets/fonts/feather/iconfont.css",
+							"projects/s4-superapps/src/assets/fonts/font-awesome/css/font-awesome.min.css",
+							"projects/s4-superapps/src/assets/fonts/flag-icon-css/css/flag-icon.min.css"
+						],
+						"stylePreprocessorOptions": {
+							"includePaths": [
+								"node_modules",
+								"projects/s4-superapps/src/assets"
+							]
+						},
+						"scripts": [
+							"./node_modules/katex/dist/katex.min.js",
+							"./node_modules/quill/dist/quill.min.js"
+						],
+						"extraWebpackConfig": "projects/s4-superapps/webpack.config.js",
+						"commonChunk": false
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "4mb",
+									"maximumError": "5mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "4mb",
+									"maximumError": "5mb"
+								}
+							],
+							"fileReplacements": [
+								{
+									"replace": "projects/s4-superapps/src/environments/environment.ts",
+									"with": "projects/s4-superapps/src/environments/environment.prod.ts"
+								}
+							],
+							"baseHref": "/",
+							"aot": true,
+							"optimization": true,
+							"outputHashing": "all",
+							"sourceMap": false,
+							"namedChunks": false,
+							"extractLicenses": true,
+							"vendorChunk": true,
+							"buildOptimizer": true,
+							"extraWebpackConfig": "projects/s4-superapps/webpack.prod.config.js"
+						},
+						"development": {
+							"buildOptimizer": false,
+							"optimization": false,
+							"vendorChunk": true,
+							"extractLicenses": false,
+							"sourceMap": true,
+							"namedChunks": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"builder": "ngx-build-plus:dev-server",
+					"options": {
+						"browserTarget": "s4-superapps:build",
+						"port": 4200,
+						"host": "localhost",
+						"publicHost": "http://localhost:4200",
+						"extraWebpackConfig": "projects/s4-superapps/webpack.config.js"
+					},
+					"configurations": {
+						"production": {
+							"browserTarget": "s4-superapps:build:production",
+							"extraWebpackConfig": "projects/s4-superapps/webpack.prod.config.js"
+						},
+						"development": {
+							"browserTarget": "s4-superapps:build:development"
+						}
+					},
+					"defaultConfiguration": "development"
+				},
+				"extract-i18n": {
+					"builder": "ngx-build-plus:extract-i18n",
+					"options": {
+						"browserTarget": "s4-superapps:build",
+						"extraWebpackConfig": "projects/s4-superapps/webpack.config.js"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"main": "projects/s4-superapps/src/test.ts",
+						"polyfills": "projects/s4-superapps/src/polyfills.ts",
+						"tsConfig": "projects/s4-superapps/tsconfig.spec.json",
+						"karmaConfig": "projects/s4-superapps/karma.conf.js",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/s4-superapps/src/favicon.ico",
+							"projects/s4-superapps/src/assets"
+						],
+						"styles": [
+							"projects/s4-superapps/src/styles.scss"
+						],
+						"scripts": [
+							"node_modules/apexcharts/dist/apexcharts.min.js"
+						]
+					}
+				}
+			}
+		},
+		"hris-attendance": {
+			"projectType": "application",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss"
+				},
+				"@schematics/angular:application": {
+					"strict": true
+				}
+			},
+			"root": "projects/hris-attendance",
+			"sourceRoot": "projects/hris-attendance/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "ngx-build-plus:browser",
+					"options": {
+						"outputPath": "dist/hris-attendance",
+						"index": "projects/hris-attendance/src/index.html",
+						"main": "projects/hris-attendance/src/main.ts",
+						"polyfills": "projects/hris-attendance/src/polyfills.ts",
+						"tsConfig": "projects/hris-attendance/tsconfig.app.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/hris-attendance/src/favicon.ico",
+							"projects/hris-attendance/src/assets"
+						],
+						"styles": [
+							"projects/hris-attendance/src/styles.scss"
+						],
+						"scripts": [],
+						"extraWebpackConfig": "projects/hris-attendance/webpack.config.js",
+						"commonChunk": false
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "500kb",
+									"maximumError": "1mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "1mb",
+									"maximumError": "1mb"
+								}
+							],
+							"fileReplacements": [
+								{
+									"replace": "projects/hris-attendance/src/environments/environment.ts",
+									"with": "projects/hris-attendance/src/environments/environment.prod.ts"
+								}
+							],
+							"aot": true,
+							"optimization": true,
+							"outputHashing": "all",
+							"sourceMap": false,
+							"namedChunks": false,
+							"extractLicenses": true,
+							"vendorChunk": true,
+							"buildOptimizer": true,
+							"extraWebpackConfig": "projects/hris-attendance/webpack.prod.config.js"
+						},
+						"development": {
+							"buildOptimizer": false,
+							"optimization": false,
+							"vendorChunk": true,
+							"extractLicenses": false,
+							"sourceMap": true,
+							"namedChunks": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"builder": "ngx-build-plus:dev-server",
+					"configurations": {
+						"production": {
+							"browserTarget": "hris-attendance:build:production",
+							"extraWebpackConfig": "projects/hris-attendance/webpack.prod.config.js"
+						},
+						"development": {
+							"browserTarget": "hris-attendance:build:development"
+						}
+					},
+					"defaultConfiguration": "development",
+					"options": {
+						"port": 4204,
+						"publicHost": "http://localhost:4204",
+						"extraWebpackConfig": "projects/hris-attendance/webpack.config.js"
+					}
+				},
+				"extract-i18n": {
+					"builder": "ngx-build-plus:extract-i18n",
+					"options": {
+						"browserTarget": "hris-attendance:build",
+						"extraWebpackConfig": "projects/hris-attendance/webpack.config.js"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"main": "projects/hris-attendance/src/test.ts",
+						"polyfills": "projects/hris-attendance/src/polyfills.ts",
+						"tsConfig": "projects/hris-attendance/tsconfig.spec.json",
+						"karmaConfig": "projects/hris-attendance/karma.conf.js",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/hris-attendance/src/favicon.ico",
+							"projects/hris-attendance/src/assets"
+						],
+						"styles": [
+							"projects/hris-attendance/src/styles.scss"
+						],
+						"scripts": []
+					}
+				}
+			}
+		},
+		"hris-driver": {
+			"projectType": "application",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss"
+				},
+				"@schematics/angular:application": {
+					"strict": true
+				}
+			},
+			"root": "projects/hris-driver",
+			"sourceRoot": "projects/hris-driver/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "ngx-build-plus:browser",
+					"options": {
+						"outputPath": "dist/hris-driver",
+						"index": "projects/hris-driver/src/index.html",
+						"main": "projects/hris-driver/src/main.ts",
+						"polyfills": "projects/hris-driver/src/polyfills.ts",
+						"tsConfig": "projects/hris-driver/tsconfig.app.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/hris-driver/src/favicon.ico",
+							"projects/hris-driver/src/assets"
+						],
+						"styles": [
+							"projects/hris-driver/src/styles.scss"
+						],
+						"scripts": [],
+						"extraWebpackConfig": "projects/hris-driver/webpack.config.js",
+						"commonChunk": false
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "500kb",
+									"maximumError": "1mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "1mb",
+									"maximumError": "1mb"
+								}
+							],
+							"fileReplacements": [
+								{
+									"replace": "projects/hris-driver/src/environments/environment.ts",
+									"with": "projects/hris-driver/src/environments/environment.prod.ts"
+								}
+							],
+							"aot": true,
+							"optimization": true,
+							"outputHashing": "all",
+							"sourceMap": false,
+							"namedChunks": false,
+							"extractLicenses": true,
+							"vendorChunk": true,
+							"buildOptimizer": true,
+							"extraWebpackConfig": "projects/hris-driver/webpack.prod.config.js"
+						},
+						"development": {
+							"buildOptimizer": false,
+							"optimization": false,
+							"vendorChunk": true,
+							"extractLicenses": false,
+							"sourceMap": true,
+							"namedChunks": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"builder": "ngx-build-plus:dev-server",
+					"configurations": {
+						"production": {
+							"browserTarget": "hris-driver:build:production",
+							"extraWebpackConfig": "projects/hris-driver/webpack.prod.config.js"
+						},
+						"development": {
+							"browserTarget": "hris-driver:build:development"
+						}
+					},
+					"defaultConfiguration": "development",
+					"options": {
+						"port": 4205,
+						"publicHost": "http://localhost:4205",
+						"extraWebpackConfig": "projects/hris-driver/webpack.config.js"
+					}
+				},
+				"extract-i18n": {
+					"builder": "ngx-build-plus:extract-i18n",
+					"options": {
+						"browserTarget": "hris-driver:build",
+						"extraWebpackConfig": "projects/hris-driver/webpack.config.js"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"main": "projects/hris-driver/src/test.ts",
+						"polyfills": "projects/hris-driver/src/polyfills.ts",
+						"tsConfig": "projects/hris-driver/tsconfig.spec.json",
+						"karmaConfig": "projects/hris-driver/karma.conf.js",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/hris-driver/src/favicon.ico",
+							"projects/hris-driver/src/assets"
+						],
+						"styles": [
+							"projects/hris-driver/src/styles.scss"
+						],
+						"scripts": []
+					}
+				}
+			}
+		},
+		"authentication": {
+			"projectType": "application",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss"
+				},
+				"@schematics/angular:application": {
+					"strict": true
+				}
+			},
+			"root": "projects/authentication",
+			"sourceRoot": "projects/authentication/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "ngx-build-plus:browser",
+					"options": {
+						"outputPath": "dist/authentication",
+						"index": "projects/authentication/src/index.html",
+						"main": "projects/authentication/src/main.ts",
+						"polyfills": "projects/authentication/src/polyfills.ts",
+						"tsConfig": "projects/authentication/tsconfig.app.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/authentication/src/favicon.ico",
+							"projects/authentication/src/assets"
+						],
+						"styles": [
+							"projects/authentication/src/styles.scss"
+						],
+						"scripts": [],
+						"extraWebpackConfig": "projects/authentication/webpack.config.js",
+						"commonChunk": false
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "1mb",
+									"maximumError": "1mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "1mb",
+									"maximumError": "1mb"
+								}
+							],
+							"fileReplacements": [
+								{
+									"replace": "projects/authentication/src/environments/environment.ts",
+									"with": "projects/authentication/src/environments/environment.prod.ts"
+								}
+							],
+							"aot": true,
+							"optimization": true,
+							"outputHashing": "all",
+							"sourceMap": false,
+							"namedChunks": false,
+							"extractLicenses": true,
+							"vendorChunk": true,
+							"buildOptimizer": true,
+							"extraWebpackConfig": "projects/authentication/webpack.prod.config.js"
+						},
+						"development": {
+							"buildOptimizer": false,
+							"optimization": false,
+							"vendorChunk": true,
+							"extractLicenses": false,
+							"sourceMap": true,
+							"namedChunks": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"builder": "ngx-build-plus:dev-server",
+					"configurations": {
+						"production": {
+							"browserTarget": "authentication:build:production",
+							"extraWebpackConfig": "projects/authentication/webpack.prod.config.js"
+						},
+						"development": {
+							"browserTarget": "authentication:build:development"
+						}
+					},
+					"defaultConfiguration": "development",
+					"options": {
+						"port": 4206,
+						"publicHost": "http://localhost:4206",
+						"extraWebpackConfig": "projects/authentication/webpack.config.js"
+					}
+				},
+				"extract-i18n": {
+					"builder": "ngx-build-plus:extract-i18n",
+					"options": {
+						"browserTarget": "authentication:build",
+						"extraWebpackConfig": "projects/authentication/webpack.config.js"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"main": "projects/authentication/src/test.ts",
+						"polyfills": "projects/authentication/src/polyfills.ts",
+						"tsConfig": "projects/authentication/tsconfig.spec.json",
+						"karmaConfig": "projects/authentication/karma.conf.js",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/authentication/src/favicon.ico",
+							"projects/authentication/src/assets"
+						],
+						"styles": [
+							"projects/authentication/src/styles.scss"
+						],
+						"scripts": []
+					}
+				}
+			}
+		},
+		"auth-lib": {
+			"projectType": "library",
+			"root": "projects/auth-lib",
+			"sourceRoot": "projects/auth-lib/src",
+			"prefix": "lib",
+			"architect": {
+				"build": {
+					"builder": "@angular-devkit/build-angular:ng-packagr",
+					"options": {
+						"project": "projects/auth-lib/ng-package.json"
+					},
+					"configurations": {
+						"production": {
+							"tsConfig": "projects/auth-lib/tsconfig.lib.prod.json"
+						},
+						"development": {
+							"tsConfig": "projects/auth-lib/tsconfig.lib.json"
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"main": "projects/auth-lib/src/test.ts",
+						"tsConfig": "projects/auth-lib/tsconfig.spec.json",
+						"karmaConfig": "projects/auth-lib/karma.conf.js"
+					}
+				}
+			}
+		},
+		"sso": {
+			"projectType": "application",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss"
+				},
+				"@schematics/angular:application": {
+					"strict": true
+				}
+			},
+			"root": "projects/sso",
+			"sourceRoot": "projects/sso/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "ngx-build-plus:browser",
+					"options": {
+						"outputPath": "dist/sso",
+						"index": "projects/sso/src/index.html",
+						"main": "projects/sso/src/main.ts",
+						"polyfills": "projects/sso/src/polyfills.ts",
+						"tsConfig": "projects/sso/tsconfig.app.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/sso/src/favicon.ico",
+							"projects/sso/src/assets"
+						],
+						"styles": [
+							"projects/sso/src/styles.scss"
+						],
+						"scripts": [],
+						"extraWebpackConfig": "projects/sso/webpack.config.js",
+						"commonChunk": false
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "4mb",
+									"maximumError": "5mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "4mb",
+									"maximumError": "5mb"
+								}
+							],
+							"fileReplacements": [
+								{
+									"replace": "projects/sso/src/environments/environment.ts",
+									"with": "projects/sso/src/environments/environment.prod.ts"
+								}
+							],
+							"aot": true,
+							"optimization": true,
+							"outputHashing": "all",
+							"sourceMap": false,
+							"namedChunks": false,
+							"extractLicenses": true,
+							"vendorChunk": true,
+							"buildOptimizer": true,
+							"extraWebpackConfig": "projects/sso/webpack.prod.config.js"
+						},
+						"development": {
+							"buildOptimizer": false,
+							"optimization": false,
+							"vendorChunk": true,
+							"extractLicenses": false,
+							"sourceMap": true,
+							"namedChunks": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"builder": "ngx-build-plus:dev-server",
+					"configurations": {
+						"production": {
+							"browserTarget": "sso:build:production",
+							"extraWebpackConfig": "projects/sso/webpack.prod.config.js"
+						},
+						"development": {
+							"browserTarget": "sso:build:development"
+						}
+					},
+					"defaultConfiguration": "development",
+					"options": {
+						"port": 4300,
+						"publicHost": "http://localhost:4300",
+						"extraWebpackConfig": "projects/sso/webpack.config.js"
+					}
+				},
+				"extract-i18n": {
+					"builder": "ngx-build-plus:extract-i18n",
+					"options": {
+						"browserTarget": "sso:build",
+						"extraWebpackConfig": "projects/sso/webpack.config.js"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"main": "projects/sso/src/test.ts",
+						"polyfills": "projects/sso/src/polyfills.ts",
+						"tsConfig": "projects/sso/tsconfig.spec.json",
+						"karmaConfig": "projects/sso/karma.conf.js",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/sso/src/favicon.ico",
+							"projects/sso/src/assets"
+						],
+						"styles": [
+							"projects/sso/src/styles.scss"
+						],
+						"scripts": []
+					}
+				}
+			}
+		},
+		"hris-dashboard": {
+			"projectType": "application",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss"
+				},
+				"@schematics/angular:application": {
+					"strict": true
+				}
+			},
+			"root": "projects/hris-dashboard",
+			"sourceRoot": "projects/hris-dashboard/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "ngx-build-plus:browser",
+					"options": {
+						"outputPath": "dist/hris-dashboard",
+						"index": "projects/hris-dashboard/src/index.html",
+						"main": "projects/hris-dashboard/src/main.ts",
+						"polyfills": "projects/hris-dashboard/src/polyfills.ts",
+						"tsConfig": "projects/hris-dashboard/tsconfig.app.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/hris-dashboard/src/favicon.ico",
+							"projects/hris-dashboard/src/assets"
+						],
+						"styles": [
+							"projects/hris-dashboard/src/styles.scss"
+						],
+						"scripts": [],
+						"extraWebpackConfig": "projects/hris-dashboard/webpack.config.js",
+						"commonChunk": false
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "500kb",
+									"maximumError": "1mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "1mb",
+									"maximumError": "1mb"
+								}
+							],
+							"fileReplacements": [
+								{
+									"replace": "projects/hris-dashboard/src/environments/environment.ts",
+									"with": "projects/hris-dashboard/src/environments/environment.prod.ts"
+								}
+							],
+							"aot": true,
+							"optimization": true,
+							"outputHashing": "all",
+							"sourceMap": false,
+							"namedChunks": false,
+							"extractLicenses": true,
+							"vendorChunk": true,
+							"buildOptimizer": true,
+							"extraWebpackConfig": "projects/hris-dashboard/webpack.prod.config.js"
+						},
+						"development": {
+							"buildOptimizer": false,
+							"optimization": false,
+							"vendorChunk": true,
+							"extractLicenses": false,
+							"sourceMap": true,
+							"namedChunks": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"builder": "ngx-build-plus:dev-server",
+					"configurations": {
+						"production": {
+							"browserTarget": "hris-dashboard:build:production",
+							"extraWebpackConfig": "projects/hris-dashboard/webpack.prod.config.js"
+						},
+						"development": {
+							"browserTarget": "hris-dashboard:build:development"
+						}
+					},
+					"defaultConfiguration": "development",
+					"options": {
+						"port": 4207,
+						"publicHost": "http://localhost:4207",
+						"extraWebpackConfig": "projects/hris-dashboard/webpack.config.js"
+					}
+				},
+				"extract-i18n": {
+					"builder": "ngx-build-plus:extract-i18n",
+					"options": {
+						"browserTarget": "hris-dashboard:build",
+						"extraWebpackConfig": "projects/hris-dashboard/webpack.config.js"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"main": "projects/hris-dashboard/src/test.ts",
+						"polyfills": "projects/hris-dashboard/src/polyfills.ts",
+						"tsConfig": "projects/hris-dashboard/tsconfig.spec.json",
+						"karmaConfig": "projects/hris-dashboard/karma.conf.js",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/hris-dashboard/src/favicon.ico",
+							"projects/hris-dashboard/src/assets"
+						],
+						"styles": [
+							"projects/hris-dashboard/src/styles.scss"
+						],
+						"scripts": []
+					}
+				}
+			}
+		},
+		"hris-request": {
+			"projectType": "application",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss"
+				},
+				"@schematics/angular:application": {
+					"strict": true
+				}
+			},
+			"root": "projects/hris-request",
+			"sourceRoot": "projects/hris-request/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "ngx-build-plus:browser",
+					"options": {
+						"outputPath": "dist/hris-request",
+						"index": "projects/hris-request/src/index.html",
+						"main": "projects/hris-request/src/main.ts",
+						"polyfills": "projects/hris-request/src/polyfills.ts",
+						"tsConfig": "projects/hris-request/tsconfig.app.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/hris-request/src/favicon.ico",
+							"projects/hris-request/src/assets"
+						],
+						"styles": [
+							"projects/hris-request/src/styles.scss"
+						],
+						"scripts": [],
+						"extraWebpackConfig": "projects/hris-request/webpack.config.js",
+						"commonChunk": false
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "500kb",
+									"maximumError": "1mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "1mb",
+									"maximumError": "1mb"
+								}
+							],
+							"fileReplacements": [
+								{
+									"replace": "projects/hris-request/src/environments/environment.ts",
+									"with": "projects/hris-request/src/environments/environment.prod.ts"
+								}
+							],
+							"aot": true,
+							"optimization": true,
+							"outputHashing": "all",
+							"sourceMap": false,
+							"namedChunks": false,
+							"extractLicenses": true,
+							"vendorChunk": true,
+							"buildOptimizer": true,
+							"extraWebpackConfig": "projects/hris-request/webpack.prod.config.js"
+						},
+						"development": {
+							"buildOptimizer": false,
+							"optimization": false,
+							"vendorChunk": true,
+							"extractLicenses": false,
+							"sourceMap": true,
+							"namedChunks": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"builder": "ngx-build-plus:dev-server",
+					"configurations": {
+						"production": {
+							"browserTarget": "hris-request:build:production",
+							"extraWebpackConfig": "projects/hris-request/webpack.prod.config.js"
+						},
+						"development": {
+							"browserTarget": "hris-request:build:development"
+						}
+					},
+					"defaultConfiguration": "development",
+					"options": {
+						"port": 4208,
+						"publicHost": "http://localhost:4208",
+						"extraWebpackConfig": "projects/hris-request/webpack.config.js"
+					}
+				},
+				"extract-i18n": {
+					"builder": "ngx-build-plus:extract-i18n",
+					"options": {
+						"browserTarget": "hris-request:build",
+						"extraWebpackConfig": "projects/hris-request/webpack.config.js"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"main": "projects/hris-request/src/test.ts",
+						"polyfills": "projects/hris-request/src/polyfills.ts",
+						"tsConfig": "projects/hris-request/tsconfig.spec.json",
+						"karmaConfig": "projects/hris-request/karma.conf.js",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/hris-request/src/favicon.ico",
+							"projects/hris-request/src/assets"
+						],
+						"styles": [
+							"projects/hris-request/src/styles.scss"
+						],
+						"scripts": []
+					}
+				}
+			}
+		},
+		"hris-profile": {
+			"projectType": "application",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss"
+				},
+				"@schematics/angular:application": {
+					"strict": true
+				}
+			},
+			"root": "projects/hris-profile",
+			"sourceRoot": "projects/hris-profile/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "ngx-build-plus:browser",
+					"options": {
+						"outputPath": "dist/hris-profile",
+						"index": "projects/hris-profile/src/index.html",
+						"main": "projects/hris-profile/src/main.ts",
+						"polyfills": "projects/hris-profile/src/polyfills.ts",
+						"tsConfig": "projects/hris-profile/tsconfig.app.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/hris-profile/src/favicon.ico",
+							"projects/hris-profile/src/assets"
+						],
+						"styles": [
+							"projects/hris-profile/src/styles.scss"
+						],
+						"scripts": [],
+						"extraWebpackConfig": "projects/hris-profile/webpack.config.js",
+						"commonChunk": false
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "1mb",
+									"maximumError": "2mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "1mb",
+									"maximumError": "2mb"
+								}
+							],
+							"fileReplacements": [
+								{
+									"replace": "projects/hris-profile/src/environments/environment.ts",
+									"with": "projects/hris-profile/src/environments/environment.prod.ts"
+								}
+							],
+							"aot": true,
+							"optimization": true,
+							"outputHashing": "all",
+							"sourceMap": false,
+							"namedChunks": false,
+							"extractLicenses": true,
+							"vendorChunk": true,
+							"buildOptimizer": true,
+							"extraWebpackConfig": "projects/hris-profile/webpack.prod.config.js"
+						},
+						"development": {
+							"buildOptimizer": false,
+							"optimization": false,
+							"vendorChunk": true,
+							"extractLicenses": false,
+							"sourceMap": true,
+							"namedChunks": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"builder": "ngx-build-plus:dev-server",
+					"configurations": {
+						"production": {
+							"browserTarget": "hris-profile:build:production",
+							"extraWebpackConfig": "projects/hris-profile/webpack.prod.config.js"
+						},
+						"development": {
+							"browserTarget": "hris-profile:build:development"
+						}
+					},
+					"defaultConfiguration": "development",
+					"options": {
+						"port": 4209,
+						"publicHost": "http://localhost:4209",
+						"extraWebpackConfig": "projects/hris-profile/webpack.config.js"
+					}
+				},
+				"extract-i18n": {
+					"builder": "ngx-build-plus:extract-i18n",
+					"options": {
+						"browserTarget": "hris-profile:build",
+						"extraWebpackConfig": "projects/hris-profile/webpack.config.js"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"main": "projects/hris-profile/src/test.ts",
+						"polyfills": "projects/hris-profile/src/polyfills.ts",
+						"tsConfig": "projects/hris-profile/tsconfig.spec.json",
+						"karmaConfig": "projects/hris-profile/karma.conf.js",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/hris-profile/src/favicon.ico",
+							"projects/hris-profile/src/assets"
+						],
+						"styles": [
+							"projects/hris-profile/src/styles.scss"
+						],
+						"scripts": []
+					}
+				}
+			}
+		},
+		"hris-subordinate-data": {
+			"projectType": "application",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss"
+				},
+				"@schematics/angular:application": {
+					"strict": true
+				}
+			},
+			"root": "projects/hris-subordinate-data",
+			"sourceRoot": "projects/hris-subordinate-data/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "ngx-build-plus:browser",
+					"options": {
+						"outputPath": "dist/hris-subordinate-data",
+						"index": "projects/hris-subordinate-data/src/index.html",
+						"main": "projects/hris-subordinate-data/src/main.ts",
+						"polyfills": "projects/hris-subordinate-data/src/polyfills.ts",
+						"tsConfig": "projects/hris-subordinate-data/tsconfig.app.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/hris-subordinate-data/src/favicon.ico",
+							"projects/hris-subordinate-data/src/assets"
+						],
+						"styles": [
+							"projects/hris-subordinate-data/src/styles.scss"
+						],
+						"scripts": [],
+						"extraWebpackConfig": "projects/hris-subordinate-data/webpack.config.js",
+						"commonChunk": false
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "500kb",
+									"maximumError": "1mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "1mb",
+									"maximumError": "1mb"
+								}
+							],
+							"fileReplacements": [
+								{
+									"replace": "projects/hris-subordinate-data/src/environments/environment.ts",
+									"with": "projects/hris-subordinate-data/src/environments/environment.prod.ts"
+								}
+							],
+							"aot": true,
+							"optimization": true,
+							"outputHashing": "all",
+							"sourceMap": false,
+							"namedChunks": false,
+							"extractLicenses": true,
+							"vendorChunk": true,
+							"buildOptimizer": true,
+							"extraWebpackConfig": "projects/hris-subordinate-data/webpack.prod.config.js"
+						},
+						"development": {
+							"buildOptimizer": false,
+							"optimization": false,
+							"vendorChunk": true,
+							"extractLicenses": false,
+							"sourceMap": true,
+							"namedChunks": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"builder": "ngx-build-plus:dev-server",
+					"configurations": {
+						"production": {
+							"browserTarget": "hris-subordinate-data:build:production",
+							"extraWebpackConfig": "projects/hris-subordinate-data/webpack.prod.config.js"
+						},
+						"development": {
+							"browserTarget": "hris-subordinate-data:build:development"
+						}
+					},
+					"defaultConfiguration": "development",
+					"options": {
+						"port": 4210,
+						"publicHost": "http://localhost:4210",
+						"extraWebpackConfig": "projects/hris-subordinate-data/webpack.config.js"
+					}
+				},
+				"extract-i18n": {
+					"builder": "ngx-build-plus:extract-i18n",
+					"options": {
+						"browserTarget": "hris-subordinate-data:build",
+						"extraWebpackConfig": "projects/hris-subordinate-data/webpack.config.js"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"main": "projects/hris-subordinate-data/src/test.ts",
+						"polyfills": "projects/hris-subordinate-data/src/polyfills.ts",
+						"tsConfig": "projects/hris-subordinate-data/tsconfig.spec.json",
+						"karmaConfig": "projects/hris-subordinate-data/karma.conf.js",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/hris-subordinate-data/src/favicon.ico",
+							"projects/hris-subordinate-data/src/assets"
+						],
+						"styles": [
+							"projects/hris-subordinate-data/src/styles.scss"
+						],
+						"scripts": []
+					}
+				}
+			}
+		},
+		"leave-balance-lib": {
+			"projectType": "library",
+			"root": "projects/leave-balance-lib",
+			"sourceRoot": "projects/leave-balance-lib/src",
+			"prefix": "lib",
+			"architect": {
+				"build": {
+					"builder": "@angular-devkit/build-angular:ng-packagr",
+					"options": {
+						"project": "projects/leave-balance-lib/ng-package.json"
+					},
+					"configurations": {
+						"production": {
+							"tsConfig": "projects/leave-balance-lib/tsconfig.lib.prod.json"
+						},
+						"development": {
+							"tsConfig": "projects/leave-balance-lib/tsconfig.lib.json"
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"main": "projects/leave-balance-lib/src/test.ts",
+						"tsConfig": "projects/leave-balance-lib/tsconfig.spec.json",
+						"karmaConfig": "projects/leave-balance-lib/karma.conf.js"
+					}
+				}
+			}
+		},
+		"hris-hrd-request": {
+			"projectType": "application",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss"
+				},
+				"@schematics/angular:application": {
+					"strict": true
+				}
+			},
+			"root": "projects/hris-hrd-request",
+			"sourceRoot": "projects/hris-hrd-request/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "ngx-build-plus:browser",
+					"options": {
+						"outputPath": "dist/hris-hrd-request",
+						"index": "projects/hris-hrd-request/src/index.html",
+						"main": "projects/hris-hrd-request/src/main.ts",
+						"polyfills": "projects/hris-hrd-request/src/polyfills.ts",
+						"tsConfig": "projects/hris-hrd-request/tsconfig.app.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/hris-hrd-request/src/favicon.ico",
+							"projects/hris-hrd-request/src/assets"
+						],
+						"styles": [
+							"projects/hris-hrd-request/src/styles.scss"
+						],
+						"scripts": [],
+						"extraWebpackConfig": "projects/hris-hrd-request/webpack.config.js",
+						"commonChunk": false
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "500kb",
+									"maximumError": "1mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "1mb",
+									"maximumError": "1mb"
+								}
+							],
+							"fileReplacements": [
+								{
+									"replace": "projects/hris-hrd-request/src/environments/environment.ts",
+									"with": "projects/hris-hrd-request/src/environments/environment.prod.ts"
+								}
+							],
+							"outputHashing": "all",
+							"extraWebpackConfig": "projects/hris-hrd-request/webpack.prod.config.js"
+						},
+						"development": {
+							"buildOptimizer": false,
+							"optimization": false,
+							"vendorChunk": true,
+							"extractLicenses": false,
+							"sourceMap": true,
+							"namedChunks": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"builder": "ngx-build-plus:dev-server",
+					"configurations": {
+						"production": {
+							"browserTarget": "hris-hrd-request:build:production",
+							"extraWebpackConfig": "projects/hris-hrd-request/webpack.prod.config.js"
+						},
+						"development": {
+							"browserTarget": "hris-hrd-request:build:development"
+						}
+					},
+					"defaultConfiguration": "development",
+					"options": {
+						"port": 4211,
+						"publicHost": "http://localhost:4211",
+						"extraWebpackConfig": "projects/hris-hrd-request/webpack.config.js"
+					}
+				},
+				"extract-i18n": {
+					"builder": "ngx-build-plus:extract-i18n",
+					"options": {
+						"browserTarget": "hris-hrd-request:build",
+						"extraWebpackConfig": "projects/hris-hrd-request/webpack.config.js"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"main": "projects/hris-hrd-request/src/test.ts",
+						"polyfills": "projects/hris-hrd-request/src/polyfills.ts",
+						"tsConfig": "projects/hris-hrd-request/tsconfig.spec.json",
+						"karmaConfig": "projects/hris-hrd-request/karma.conf.js",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/hris-hrd-request/src/favicon.ico",
+							"projects/hris-hrd-request/src/assets"
+						],
+						"styles": [
+							"projects/hris-hrd-request/src/styles.scss"
+						],
+						"scripts": []
+					}
+				}
+			}
+		},
+		"permission-request": {
+			"projectType": "library",
+			"root": "projects/permission-request",
+			"sourceRoot": "projects/permission-request/src",
+			"prefix": "lib",
+			"architect": {
+				"build": {
+					"builder": "@angular-devkit/build-angular:ng-packagr",
+					"options": {
+						"project": "projects/permission-request/ng-package.json"
+					},
+					"configurations": {
+						"production": {
+							"tsConfig": "projects/permission-request/tsconfig.lib.prod.json"
+						},
+						"development": {
+							"tsConfig": "projects/permission-request/tsconfig.lib.json"
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"main": "projects/permission-request/src/test.ts",
+						"tsConfig": "projects/permission-request/tsconfig.spec.json",
+						"karmaConfig": "projects/permission-request/karma.conf.js"
+					}
+				}
+			}
+		},
+		"hris-questionnaire": {
+			"projectType": "application",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss"
+				},
+				"@schematics/angular:application": {
+					"strict": true
+				}
+			},
+			"root": "projects/hris-questionnaire",
+			"sourceRoot": "projects/hris-questionnaire/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "ngx-build-plus:browser",
+					"options": {
+						"outputPath": "dist/hris-questionnaire",
+						"index": "projects/hris-questionnaire/src/index.html",
+						"main": "projects/hris-questionnaire/src/main.ts",
+						"polyfills": "projects/hris-questionnaire/src/polyfills.ts",
+						"tsConfig": "projects/hris-questionnaire/tsconfig.app.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/hris-questionnaire/src/favicon.ico",
+							"projects/hris-questionnaire/src/assets"
+						],
+						"styles": [
+							"projects/hris-questionnaire/src/styles.scss"
+						],
+						"scripts": [],
+						"extraWebpackConfig": "projects/hris-questionnaire/webpack.config.js",
+						"commonChunk": false
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "500kb",
+									"maximumError": "1mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "1mb",
+									"maximumError": "1mb"
+								}
+							],
+							"fileReplacements": [
+								{
+									"replace": "projects/hris-questionnaire/src/environments/environment.ts",
+									"with": "projects/hris-questionnaire/src/environments/environment.prod.ts"
+								}
+							],
+							"outputHashing": "all",
+							"extraWebpackConfig": "projects/hris-questionnaire/webpack.prod.config.js"
+						},
+						"development": {
+							"buildOptimizer": false,
+							"optimization": false,
+							"vendorChunk": true,
+							"extractLicenses": false,
+							"sourceMap": true,
+							"namedChunks": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"builder": "ngx-build-plus:dev-server",
+					"configurations": {
+						"production": {
+							"browserTarget": "hris-questionnaire:build:production",
+							"extraWebpackConfig": "projects/hris-questionnaire/webpack.prod.config.js"
+						},
+						"development": {
+							"browserTarget": "hris-questionnaire:build:development"
+						}
+					},
+					"defaultConfiguration": "development",
+					"options": {
+						"port": 4212,
+						"publicHost": "http://localhost:4212",
+						"extraWebpackConfig": "projects/hris-questionnaire/webpack.config.js"
+					}
+				},
+				"extract-i18n": {
+					"builder": "ngx-build-plus:extract-i18n",
+					"options": {
+						"browserTarget": "hris-questionnaire:build",
+						"extraWebpackConfig": "projects/hris-questionnaire/webpack.config.js"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"main": "projects/hris-questionnaire/src/test.ts",
+						"polyfills": "projects/hris-questionnaire/src/polyfills.ts",
+						"tsConfig": "projects/hris-questionnaire/tsconfig.spec.json",
+						"karmaConfig": "projects/hris-questionnaire/karma.conf.js",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/hris-questionnaire/src/favicon.ico",
+							"projects/hris-questionnaire/src/assets"
+						],
+						"styles": [
+							"projects/hris-questionnaire/src/styles.scss"
+						],
+						"scripts": []
+					}
+				}
+			}
+		},
+		"hris-recruitment": {
+			"projectType": "application",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss"
+				},
+				"@schematics/angular:application": {
+					"strict": true
+				}
+			},
+			"root": "projects/hris-recruitment",
+			"sourceRoot": "projects/hris-recruitment/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "ngx-build-plus:browser",
+					"options": {
+						"outputPath": "dist/hris-recruitment",
+						"index": "projects/hris-recruitment/src/index.html",
+						"main": "projects/hris-recruitment/src/main.ts",
+						"polyfills": "projects/hris-recruitment/src/polyfills.ts",
+						"tsConfig": "projects/hris-recruitment/tsconfig.app.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/hris-recruitment/src/favicon.ico",
+							"projects/hris-recruitment/src/assets"
+						],
+						"styles": [
+							"projects/hris-recruitment/src/styles.scss"
+						],
+						"scripts": [],
+						"extraWebpackConfig": "projects/hris-recruitment/webpack.config.js",
+						"commonChunk": false
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "500kb",
+									"maximumError": "1mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "1mb",
+									"maximumError": "1mb"
+								}
+							],
+							"fileReplacements": [
+								{
+									"replace": "projects/hris-recruitment/src/environments/environment.ts",
+									"with": "projects/hris-recruitment/src/environments/environment.prod.ts"
+								}
+							],
+							"outputHashing": "all",
+							"extraWebpackConfig": "projects/hris-recruitment/webpack.prod.config.js"
+						},
+						"development": {
+							"buildOptimizer": false,
+							"optimization": false,
+							"vendorChunk": true,
+							"extractLicenses": false,
+							"sourceMap": true,
+							"namedChunks": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"builder": "ngx-build-plus:dev-server",
+					"configurations": {
+						"production": {
+							"browserTarget": "hris-recruitment:build:production",
+							"extraWebpackConfig": "projects/hris-recruitment/webpack.prod.config.js"
+						},
+						"development": {
+							"browserTarget": "hris-recruitment:build:development"
+						}
+					},
+					"defaultConfiguration": "development",
+					"options": {
+						"port": 4213,
+						"publicHost": "http://localhost:4213",
+						"extraWebpackConfig": "projects/hris-recruitment/webpack.config.js"
+					}
+				},
+				"extract-i18n": {
+					"builder": "ngx-build-plus:extract-i18n",
+					"options": {
+						"browserTarget": "hris-recruitment:build",
+						"extraWebpackConfig": "projects/hris-recruitment/webpack.config.js"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"main": "projects/hris-recruitment/src/test.ts",
+						"polyfills": "projects/hris-recruitment/src/polyfills.ts",
+						"tsConfig": "projects/hris-recruitment/tsconfig.spec.json",
+						"karmaConfig": "projects/hris-recruitment/karma.conf.js",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/hris-recruitment/src/favicon.ico",
+							"projects/hris-recruitment/src/assets"
+						],
+						"styles": [
+							"projects/hris-recruitment/src/styles.scss"
+						],
+						"scripts": []
+					}
+				}
+			}
+		},
+		"hris-training-master": {
+			"projectType": "application",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss"
+				},
+				"@schematics/angular:application": {
+					"strict": true
+				}
+			},
+			"root": "projects/hris-training-master",
+			"sourceRoot": "projects/hris-training-master/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "ngx-build-plus:browser",
+					"options": {
+						"outputPath": "dist/hris-training-master",
+						"index": "projects/hris-training-master/src/index.html",
+						"main": "projects/hris-training-master/src/main.ts",
+						"polyfills": "projects/hris-training-master/src/polyfills.ts",
+						"tsConfig": "projects/hris-training-master/tsconfig.app.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/hris-training-master/src/favicon.ico",
+							"projects/hris-training-master/src/assets"
+						],
+						"styles": [
+							"projects/hris-training-master/src/styles.scss"
+						],
+						"scripts": [],
+						"extraWebpackConfig": "projects/hris-training-master/webpack.config.js",
+						"commonChunk": false
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "500kb",
+									"maximumError": "1mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "1mb",
+									"maximumError": "1mb"
+								}
+							],
+							"fileReplacements": [
+								{
+									"replace": "projects/hris-training-master/src/environments/environment.ts",
+									"with": "projects/hris-training-master/src/environments/environment.prod.ts"
+								}
+							],
+							"outputHashing": "all",
+							"extraWebpackConfig": "projects/hris-training-master/webpack.prod.config.js"
+						},
+						"development": {
+							"buildOptimizer": false,
+							"optimization": false,
+							"vendorChunk": true,
+							"extractLicenses": false,
+							"sourceMap": true,
+							"namedChunks": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"builder": "ngx-build-plus:dev-server",
+					"configurations": {
+						"production": {
+							"browserTarget": "hris-training-master:build:production",
+							"extraWebpackConfig": "projects/hris-training-master/webpack.prod.config.js"
+						},
+						"development": {
+							"browserTarget": "hris-training-master:build:development"
+						}
+					},
+					"defaultConfiguration": "development",
+					"options": {
+						"port": 4214,
+						"publicHost": "http://localhost:4214",
+						"extraWebpackConfig": "projects/hris-training-master/webpack.config.js"
+					}
+				},
+				"extract-i18n": {
+					"builder": "ngx-build-plus:extract-i18n",
+					"options": {
+						"browserTarget": "hris-training-master:build",
+						"extraWebpackConfig": "projects/hris-training-master/webpack.config.js"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"main": "projects/hris-training-master/src/test.ts",
+						"polyfills": "projects/hris-training-master/src/polyfills.ts",
+						"tsConfig": "projects/hris-training-master/tsconfig.spec.json",
+						"karmaConfig": "projects/hris-training-master/karma.conf.js",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/hris-training-master/src/favicon.ico",
+							"projects/hris-training-master/src/assets"
+						],
+						"styles": [
+							"projects/hris-training-master/src/styles.scss"
+						],
+						"scripts": []
+					}
+				}
+			}
+		},
+		"hris-training": {
+			"projectType": "application",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss"
+				},
+				"@schematics/angular:application": {
+					"strict": true
+				}
+			},
+			"root": "projects/hris-training",
+			"sourceRoot": "projects/hris-training/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "ngx-build-plus:browser",
+					"options": {
+						"outputPath": "dist/hris-training",
+						"index": "projects/hris-training/src/index.html",
+						"main": "projects/hris-training/src/main.ts",
+						"polyfills": "projects/hris-training/src/polyfills.ts",
+						"tsConfig": "projects/hris-training/tsconfig.app.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/hris-training/src/favicon.ico",
+							"projects/hris-training/src/assets"
+						],
+						"styles": [
+							"projects/hris-training/src/styles.scss"
+						],
+						"scripts": [],
+						"extraWebpackConfig": "projects/hris-training/webpack.config.js",
+						"commonChunk": false
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "500kb",
+									"maximumError": "1mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "1mb",
+									"maximumError": "1mb"
+								}
+							],
+							"fileReplacements": [
+								{
+									"replace": "projects/hris-training/src/environments/environment.ts",
+									"with": "projects/hris-training/src/environments/environment.prod.ts"
+								}
+							],
+							"outputHashing": "all",
+							"extraWebpackConfig": "projects/hris-training/webpack.prod.config.js"
+						},
+						"development": {
+							"buildOptimizer": false,
+							"optimization": false,
+							"vendorChunk": true,
+							"extractLicenses": false,
+							"sourceMap": true,
+							"namedChunks": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"builder": "ngx-build-plus:dev-server",
+					"configurations": {
+						"production": {
+							"browserTarget": "hris-training:build:production",
+							"extraWebpackConfig": "projects/hris-training/webpack.prod.config.js"
+						},
+						"development": {
+							"browserTarget": "hris-training:build:development"
+						}
+					},
+					"defaultConfiguration": "development",
+					"options": {
+						"port": 4215,
+						"publicHost": "http://localhost:4215",
+						"extraWebpackConfig": "projects/hris-training/webpack.config.js"
+					}
+				},
+				"extract-i18n": {
+					"builder": "ngx-build-plus:extract-i18n",
+					"options": {
+						"browserTarget": "hris-training:build",
+						"extraWebpackConfig": "projects/hris-training/webpack.config.js"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"main": "projects/hris-training/src/test.ts",
+						"polyfills": "projects/hris-training/src/polyfills.ts",
+						"tsConfig": "projects/hris-training/tsconfig.spec.json",
+						"karmaConfig": "projects/hris-training/karma.conf.js",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/hris-training/src/favicon.ico",
+							"projects/hris-training/src/assets"
+						],
+						"styles": [
+							"projects/hris-training/src/styles.scss"
+						],
+						"scripts": []
+					}
+				}
+			}
+		}
+	},
+	"defaultProject": "s4-superapps",
+	"cli": {
+		"analytics": false,
+		"packageManager": "yarn"
+	}
+}

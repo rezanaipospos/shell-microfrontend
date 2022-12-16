@@ -1,0 +1,25 @@
+FROM node:latest as builder
+
+COPY package.json  ./
+
+#RUN yarn install 
+
+RUN mkdir /hris-attendance
+
+#COPY node_modules  ./hris-attendance
+
+#RUN mv ./node_modules ./hris-company-structure
+
+WORKDIR /hris-attendance
+
+COPY . .
+
+#RUN npm run ng test hris-company-structure
+
+RUN npm run ng build --configuration=production --base-href=hris/attendance  hris-attendance
+
+FROM nginx
+COPY nginx/hris-attendance.conf /etc/nginx/conf.d/default.conf
+#COPY --from=builder /hris-company-structure/dist/hris-company-structure /usr/share/nginx/html
+COPY --from=builder /hris-attendance/dist/hris-attendance /usr/share/nginx/html/attendance
+CMD ["nginx", "-g", "daemon off;"]

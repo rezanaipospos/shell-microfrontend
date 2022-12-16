@@ -1,0 +1,25 @@
+FROM node:alpine as builder
+
+COPY package.json  ./
+
+#RUN yarn install 
+
+RUN mkdir /hris-questionnaire
+
+#COPY node_modules  ./hris-settings
+
+#RUN mv ./node_modules ./hris-company-structure
+
+WORKDIR /hris-questionnaire
+
+COPY . .
+
+#RUN npm run ng test hris-company-structure
+
+RUN npm run ng build --configuration=production --base-href=hris/questionnaire  hris-questionnaire
+
+FROM nginx:stable-alpine
+COPY nginx/hris-questionnaire.conf /etc/nginx/conf.d/default.conf
+#COPY --from=builder /hris-company-structure/dist/hris-company-structure /usr/share/nginx/html
+COPY --from=builder /hris-questionnaire/dist/hris-questionnaire /usr/share/nginx/html/questionnaire
+CMD ["nginx", "-g", "daemon off;"]

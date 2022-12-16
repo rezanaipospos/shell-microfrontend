@@ -1,0 +1,24 @@
+FROM node:alpine as builder
+
+COPY package.json  ./
+
+#RUN yarn install 
+
+RUN mkdir /authentication
+
+#COPY node_modules  ./authentication
+
+#RUN mv ./node_modules ./hris-company-structure
+
+WORKDIR /authentication
+
+COPY . .
+
+#RUN npm run ng test hris-company-structure
+
+RUN npm run ng build --configuration=production  authentication
+
+FROM nginx:stable-alpine
+COPY nginx/authentication.conf /etc/nginx/conf.d/default.conf
+COPY --from=builder /authentication/dist/authentication /usr/share/nginx/html/auth
+CMD ["nginx", "-g", "daemon off;"]

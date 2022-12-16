@@ -1,0 +1,25 @@
+FROM node:latest as builder
+
+# COPY package.json  ./
+
+#RUN yarn install 
+
+RUN mkdir /hris-profile
+
+#COPY node_modules  ./hris-profile
+
+#RUN mv ./node_modules ./hris-company-structure
+
+WORKDIR /hris-profile
+
+COPY . .
+
+#RUN npm run ng test hris-company-structure
+
+RUN npm run ng build --configuration=production --base-href=hris/profile  hris-profile
+
+FROM nginx
+COPY nginx/hris-profile.conf /etc/nginx/conf.d/default.conf
+#COPY --from=builder /hris-company-structure/dist/hris-company-structure /usr/share/nginx/html
+COPY --from=builder /hris-profile/dist/hris-profile /usr/share/nginx/html/profile
+CMD ["nginx", "-g", "daemon off;"]

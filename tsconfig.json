@@ -1,0 +1,72 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "declaration": false,
+    "module": "es2020",
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "importHelpers": true,
+    "target": "es2020",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "s4-superapps/*": [
+        "projects/s4-superapps/src/*"
+      ],
+      "shared/*": [
+        "projects/s4-superapps/src/app/shared/*"
+      ],
+      "auth-lib": [
+        "projects/auth-lib/src/public-api.ts"
+      ],
+      "core": [
+        "projects/s4-superapps/src/app/core/index.ts"
+      ],
+      "@core/*": [
+        "projects/s4-superapps/src/@core/*"
+      ],
+      "environments/*": [
+        "projects/s4-superapps/environments/*"
+      ],
+      "hris/company-structure/*": [
+        "projects/hris-company-structure/src/app/features/company-structure/*"
+      ],
+      "hris/dashboard/*": [
+        "projects/hris-dashboard/src/app/dashboard/"
+      ],
+      "hris/settings/*": [
+        "projects/hris-settings/src/app/features/settings/*"
+      ],
+      "permission-request": [
+        "projects/permission-request/src/public-api.ts"
+      ],
+      "leave-balance-lib": [
+        "projects/leave-balance-lib/src/public-api.ts"
+      ],
+      "hris/employee/*": [
+        "projects/hris-employee/src/app/features/employee/*"
+      ],
+      "hris/recruitment/*": [
+        "projects/hris-recruitment/src/*"
+      ],
+      "sso/*": [
+        "projects/sso/src/*"
+      ],
+      "profile/*": [
+        "projects/hris-profile/src/*"
+      ]
+    }
+  },
+  "angularCompilerOptions": {
+    "strictTemplates": false,
+    "strictInjectionParameters": true
+  }
+}

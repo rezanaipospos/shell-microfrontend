@@ -1,0 +1,25 @@
+FROM node:alpine as builder
+
+COPY package.json  ./
+
+#RUN yarn install 
+
+RUN mkdir /hris-request
+
+#COPY node_modules  ./hris-request
+
+#RUN mv ./node_modules ./hris-request
+
+WORKDIR /hris-request
+
+COPY . .
+
+#RUN npm run ng test hris-request
+
+RUN npm run ng build --configuration=production --base-href=hris/request  hris-request
+
+FROM nginx:stable-alpine
+COPY nginx/hris-request.conf /etc/nginx/conf.d/default.conf
+#COPY --from=builder /hris-request/dist/hris-request /usr/share/nginx/html
+COPY --from=builder /hris-request/dist/hris-request /usr/share/nginx/html/request
+CMD ["nginx", "-g", "daemon off;"]

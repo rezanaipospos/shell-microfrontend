@@ -1,0 +1,25 @@
+FROM node:alpine as builder
+
+COPY package.json  ./
+
+#RUN yarn install 
+
+RUN mkdir /hris-training-master
+
+#COPY node_modules  ./hris-settings
+
+#RUN mv ./node_modules ./hris-company-structure
+
+WORKDIR /hris-training-master
+
+COPY . .
+
+#RUN npm run ng test hris-company-structure
+
+RUN npm run ng build --configuration=production --base-href=hris/training-master  hris-training-master
+
+FROM nginx:stable-alpine
+COPY nginx/hris-training-master.conf /etc/nginx/conf.d/default.conf
+#COPY --from=builder /hris-company-structure/dist/hris-company-structure /usr/share/nginx/html
+COPY --from=builder /hris-training-master/dist/hris-training-master /usr/share/nginx/html/training-master
+CMD ["nginx", "-g", "daemon off;"]

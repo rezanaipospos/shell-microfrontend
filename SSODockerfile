@@ -1,0 +1,25 @@
+FROM node:latest as builder
+
+#COPY package.json  ./
+
+#RUN yarn install 
+
+RUN mkdir /sso
+
+#COPY node_modules  ./sso
+
+#RUN mv ./node_modules ./hris-company-structure
+
+WORKDIR /sso
+
+COPY . .
+
+#RUN npm run ng test hris-company-structure
+
+RUN npm run ng build --configuration=production --base-href=sso  sso
+
+FROM nginx
+COPY nginx/sso.conf /etc/nginx/conf.d/default.conf
+#COPY --from=builder /hris-company-structure/dist/hris-company-structure /usr/share/nginx/html
+COPY --from=builder /sso/dist/sso /usr/share/nginx/html/sso
+CMD ["nginx", "-g", "daemon off;"]
